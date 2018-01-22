@@ -15,7 +15,7 @@ public class ControllerRight : MonoBehaviour
 	public float distance;
 	public bool hasSwipedLeft;
 	public bool hasSwipedRight;
-	public ObjectMenuManager objectMenuManager;
+	public ObjMenu objectMenuManager;
 
 	// Use this for initialization
 	void Start ()

@@ -44,7 +44,7 @@ public class ControllerLeft : MonoBehaviour {
 				RaycastHit groundRay;
 				if (Physics.Raycast (teleportLocation, -Vector3.up, out groundRay, 17, laserMask))
 				{
-					teleportLocation = new Vector3 (transform.forward.x * 15 + transform.position.x, groundRay.point.y, transform.forward.z * 15 + transform.position.z);
+					teleportLocation = groundRay.point; //new Vector3 (transform.forward.x * 15 + transform.position.x, groundRay.point.y, transform.forward.z * 15 + transform.position.z);
 				}
 				laser.SetPosition (1, transform.forward * 15 + transform.position);
 				//aimer position
