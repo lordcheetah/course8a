@@ -97,7 +97,8 @@ public class ControllerRight : MonoBehaviour
 			if (device.GetPressUp (SteamVR_Controller.ButtonMask.Trigger))
 			{
 				ThrowObject (col);
-			} else if (device.GetPressDown (SteamVR_Controller.ButtonMask.Trigger))
+			}
+			else if (device.GetPressDown (SteamVR_Controller.ButtonMask.Trigger))
 			{
 				GrabObject (col);
 			}

@@ -2,15 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fan : MonoBehaviour {
+public class Fan : MonoBehaviour
+{
+	public float air = 25;
+	private Vector3 direction;
+	private Rigidbody rb;
 
-	public int air = 25;
-	private void OnCollisionEnter(Collision col)
+	/*private void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.CompareTag ("Ball"))
+		Debug.Log ("Fan1");
+		if (col.gameObject.CompareTag ("Throwable"))
 		{
-			Debug.Log ("Fan");
-			col.gameObject.GetComponent<Rigidbody> ().AddForce (transform.forward * air);
+			Debug.Log ("Fan2");
+			rb = col.gameObject.GetComponent<Rigidbody> ();
+			direction = rb.transform.position - transform.position;
+			rb.AddForceAtPosition (direction.normalized, transform.position);
+		}
+	}*/
+
+	private void OnTriggerStay(Collider col)
+	{
+		if (col.gameObject.CompareTag ("Throwable"))
+		{
+			Debug.Log ("Fan4");
+			rb = col.gameObject.GetComponent<Rigidbody> ();
+			direction = rb.transform.position - transform.position;
+			rb.AddForce (direction.normalized * air);
 		}
 	}
 }

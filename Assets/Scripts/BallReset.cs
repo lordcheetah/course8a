@@ -33,18 +33,22 @@ public class BallReset : MonoBehaviour
 			tempColor.b = 1f;
 			rend.material.color = tempColor;
 		}
-		if (col.collider.tag == "Ground")
+		else if (col.collider.tag == "Ground")
 		{
 			Reset ();
-		} else if (col.collider.tag == "Collectable")
+		}
+		else if (col.collider.tag == "Collectable")
 		{
 			sm.Collect (col.transform);
-		} else if (col.collider.tag == "Goal")
+		}
+		else if (col.collider.tag == "Goal")
 		{
+			Debug.Log (sm.allStarsCollected.ToString ());
 			if (sm.allStarsCollected)
 			{
 				NextLevel ();
-			} else
+			} 
+			else
 			{
 				Reset ();
 			}

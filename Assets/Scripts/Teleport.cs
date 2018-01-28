@@ -8,10 +8,10 @@ public class Teleport : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision col)
 	{
-		if(col.gameObject.CompareTag("Ball"))
+		if(col.gameObject.CompareTag("Throwable"))
 		{
 			Debug.Log ("Teleport");
-			col.transform.position = target.transform.position + new Vector3 (0, 0, -1);
+			col.transform.position = target.transform.position + new Vector3 (0, 1, 0);
 		}
 	}
 }

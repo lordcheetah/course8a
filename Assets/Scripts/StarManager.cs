@@ -31,6 +31,7 @@ public class StarManager : MonoBehaviour
 				if (starsCollected == stars.Length)
 				{
 					allStarsCollected = true;
+					Debug.Log ("All Stars Collected");
 				}
 				break;
 			}
