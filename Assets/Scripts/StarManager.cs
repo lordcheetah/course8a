@@ -44,6 +44,7 @@ public class StarManager : MonoBehaviour
 		{
 			star.SetActive (true);
 			starsCollected = 0;
+			allStarsCollected = false;
 		}
 	}
 }

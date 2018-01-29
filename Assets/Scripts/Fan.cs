@@ -24,7 +24,7 @@ public class Fan : MonoBehaviour
 	{
 		if (col.gameObject.CompareTag ("Throwable"))
 		{
-			Debug.Log ("Fan4");
+			//Debug.Log ("Fan4");
 			rb = col.gameObject.GetComponent<Rigidbody> ();
 			direction = rb.transform.position - transform.position;
 			rb.AddForce (direction.normalized * air);

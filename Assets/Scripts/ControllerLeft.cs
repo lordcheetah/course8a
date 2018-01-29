@@ -40,7 +40,8 @@ public class ControllerLeft : MonoBehaviour {
 				teleportAimerObject.transform.position = new Vector3 (teleportLocation.x, teleportLocation.y + yNudgeAmount, teleportLocation.z);
 			} else
 			{
-				teleportLocation = new Vector3 (transform.forward.x * 15 + transform.position.x, transform.forward.y * 15 + transform.position.y, transform.forward.z * 15 + transform.position.z);
+				//teleportLocation = new Vector3 (transform.forward.x * 15 + transform.position.x, transform.forward.y * 15 + transform.position.y, transform.forward.z * 15 + transform.position.z);
+				var tempLocation = new Vector3 (transform.forward.x * 15 + transform.position.x, transform.forward.y * 15 + transform.position.y, transform.forward.z * 15 + transform.position.z);
 				RaycastHit groundRay;
 				if (Physics.Raycast (teleportLocation, -Vector3.up, out groundRay, 17, laserMask))
 				{
