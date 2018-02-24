@@ -130,7 +130,7 @@ public class ControllerRight : MonoBehaviour
 			}
 		}
 
-		if (col.gameObject.CompareTag ("Structure"))
+		if (col.gameObject.CompareTag ("Structure") || col.gameObject.CompareTag ("Target"))
 		{
 			if (device.GetPressUp (SteamVR_Controller.ButtonMask.Trigger))
 			{
@@ -156,7 +156,8 @@ public class ControllerRight : MonoBehaviour
 		ballHeld = false;
 		coli.transform.SetParent (null);
 		Rigidbody rigidBody = coli.GetComponent<Rigidbody> ();
-		rigidBody.isKinematic = false;
+		if (coli.gameObject.CompareTag ("Throwable"))
+			rigidBody.isKinematic = false;
 		rigidBody.velocity = device.velocity * throwForce;
 		rigidBody.angularVelocity = device.angularVelocity;
 	}
